@@ -3,6 +3,7 @@ import './App.css';
 import ShoppingList from './components/ShoppingList';
 import ShoppingCart from './components/ShoppingCart';
 import EditShopping from './components/EditShopping';
+import PaymentDetails from './components/PaymentDetails';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Switch, Route } from 'react-router-dom';
 
@@ -26,6 +27,9 @@ function App() {
 						<div className="App">
 							<ShoppingCart />
 						</div>
+					</Route>
+					<Route path="/payment">
+						<PaymentDetails />
 					</Route>
 				</Switch>
 			</div>

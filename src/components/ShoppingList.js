@@ -9,9 +9,18 @@ import { GlobalContext } from '../context/GlobalState';
 import { Link } from 'react-router-dom';
 
 function ShoppingList() {
-	const { products, deleteProduct, searchResult } = useContext(GlobalContext);
+	const {
+		products,
+		deleteProduct,
+		searchResult,
+		addToCart,
+		cart,
+		removeFromCart
+	} = useContext(GlobalContext);
 
 	console.log(products);
+
+	const onClick = () => {};
 
 	return (
 		<Container>
@@ -80,16 +89,22 @@ function ShoppingList() {
 												marginRight: 10
 											}}
 											variant="primary"
+											onClick={() => {
+												addToCart(product);
+											}}
 										>
 											Add to Cart
 										</Button>
-
-										<Button
-											style={{ fontWeight: 'bold', marginBottom: 5 }}
-											variant="danger"
-										>
-											Remove from Cart
-										</Button>
+										{cart.filter((cartItem) => cartItem.name === product.name)
+											.length > 0 && (
+											<Button
+												style={{ fontWeight: 'bold', marginBottom: 5 }}
+												variant="danger"
+												onClick={() => removeFromCart(product)}
+											>
+												Remove from Cart
+											</Button>
+										)}
 									</Card.Body>
 								</Card>
 							</Col>

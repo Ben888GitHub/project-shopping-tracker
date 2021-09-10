@@ -1,16 +1,19 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { Navbar, Container, Button, Badge } from 'react-bootstrap';
-import { FaShoppingCart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { GlobalContext } from '../context/GlobalState';
+import { FaRegCreditCard } from 'react-icons/fa';
 
-function Header() {
-	const { products, cart } = useContext(GlobalContext);
+function ShoppingCartFooter() {
+	const { cart } = useContext(GlobalContext);
 	return (
 		<Navbar className="border" bg="light" variant="light">
 			<Container>
 				<Navbar.Brand style={{ fontWeight: '600' }}>
-					Total Products: {products.length}
+					Total Prices:{' '}
+					{cart
+						.map((cartItem) => cartItem.price * cartItem.quantity)
+						.reduce((a, b) => a + b, 0)}
 				</Navbar.Brand>
 				{/* <Navbar.Brand style={{ fontWeight: '600' }}>
 					To be purchased: 3
@@ -20,17 +23,14 @@ function Header() {
 						textDecoration: 'none',
 						color: 'white'
 					}}
-					to="/cart"
+					to="/payment"
 					// component={PurchaseList}
 				>
-					<Button variant="success">
-						<FaShoppingCart style={{ fontSize: 25 }} />{' '}
-						<span style={{ fontWeight: 600 }}>
-							{cart
-								.map((cartItem) => parseInt(cartItem.quantity))
-								.reduce((a, b) => a + b, 0)}
-						</span>
-						{/* {products.filter((product) => product.completed).length} */}
+					<Button style={{ fontWeight: 'bold' }} variant="success">
+						Proceed to Payment{' '}
+						<FaRegCreditCard
+							style={{ fontSize: 20, marginBottom: 3, marginLeft: 5 }}
+						/>
 					</Button>
 				</Link>
 			</Container>
@@ -38,4 +38,4 @@ function Header() {
 	);
 }
 
-export default Header;
+export default ShoppingCartFooter;

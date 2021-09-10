@@ -117,7 +117,8 @@ const AddModal = ({ show, handleClose }) => {
 							id: uuid(),
 							name: productName,
 							image: productImg,
-							price: productPrice
+							price: parseInt(productPrice),
+							quantity: 1
 						});
 						setProductName('');
 						setProductImg('');

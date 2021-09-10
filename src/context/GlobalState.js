@@ -12,25 +12,29 @@ const initialState = {
 			name: 'Leather Jacket',
 			image:
 				'https://www.kindpng.com/picc/m/134-1348553_biker-jacket-png-image-download-mens-brown-leather.png',
-			price: 10
+			price: 10,
+			quantity: 1
 		},
 		{
 			id: uuid(),
 			name: 'Honda CRV',
 			image:
 				'https://www.motorbiscuit.com/wp-content/uploads/2020/02/2020-CR-V-1024x650.jpg',
-			price: 20
+			price: 20,
+			quantity: 1
 		},
 		{
 			id: uuid(),
 			name: 'Soviet Vodka',
 			image: 'https://pbs.twimg.com/media/EMiOsTlXUAIioT_.jpg',
-			price: 30
+			price: 30,
+			quantity: 1
 		}
 	],
 	searchResult: [],
 	sortedValue: '',
-	searchedValue: ''
+	searchedValue: '',
+	cart: []
 };
 
 // Create a new context
@@ -63,12 +67,32 @@ export const GlobalProvider = ({ children }) => {
 		dispatch({ type: 'SEARCH_PRODUCT', payload: state.searchedValue });
 	};
 
-	// Function to Sort Ascending
+	// Function to Sort Ascending, Descending, High to Low, Low to High
 	const filterBySearchOrAscOrDesc = (value) => {
 		console.log(value);
 		state.sortedValue = value;
 		console.log(state.sortedValue);
 		dispatch({ type: 'SEARCH_PRODUCT', payload: state.searchedValue });
+	};
+
+	const addToCart = (value) => {
+		console.log(value);
+		dispatch({ type: 'ADD_TO_CART', payload: value });
+	};
+
+	const addOrSubtractQty = (value, e) => {
+		console.log(value);
+		dispatch({ type: 'ADD_SUBTRACT_QTY', payload: value, secondPayload: e });
+	};
+
+	const removeFromCart = (value) => {
+		console.log(value);
+		dispatch({ type: 'REMOVE_FROM_CART', payload: value });
+	};
+
+	const deleteSelectedCartItems = (value) => {
+		console.log(value);
+		dispatch({ type: 'DELETE_SELECTED', payload: value });
 	};
 
 	return (
@@ -81,7 +105,12 @@ export const GlobalProvider = ({ children }) => {
 				editProduct,
 				searchProduct,
 				searchResult: state.searchResult,
-				filterBySearchOrAscOrDesc
+				filterBySearchOrAscOrDesc,
+				addToCart,
+				cart: state.cart,
+				addOrSubtractQty,
+				removeFromCart,
+				deleteSelectedCartItems
 			}}
 		>
 			{children}

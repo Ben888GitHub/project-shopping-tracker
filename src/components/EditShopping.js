@@ -91,7 +91,8 @@ function EditShopping() {
 								id: id,
 								name: productName,
 								image: productImg,
-								price: parseInt(productPrice)
+								price: parseInt(productPrice),
+								quantity: 1
 							});
 							history.push('/');
 						}}
