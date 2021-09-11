@@ -1,18 +1,9 @@
-import React, { useContext, useState, useEffect } from 'react';
-import {
-	Container,
-	Card,
-	Form,
-	Button,
-	Navbar,
-	ListGroup,
-	Table
-} from 'react-bootstrap';
+import React, { useContext, useState } from 'react';
+import { Container, Card, Form, Button, Navbar, Table } from 'react-bootstrap';
 import {
 	FaRegArrowAltCircleLeft,
 	FaMinusSquare,
 	FaPlusSquare,
-	FaRegCreditCard,
 	FaTrashAlt
 } from 'react-icons/fa';
 import { GlobalContext } from '../context/GlobalState';
@@ -23,7 +14,6 @@ function ShoppingCart() {
 	const { cart, addOrSubtractQty, removeFromCart, deleteSelectedCartItems } =
 		useContext(GlobalContext);
 	const [selectedItems, setSelectedItems] = useState([]);
-	const [defaultChecked, setDefaultChecked] = useState(false);
 
 	let history = useHistory();
 
@@ -81,14 +71,17 @@ function ShoppingCart() {
 						{/* <br /> */}
 						<tbody>
 							{cart.length === 0 ? (
-								<>
-									<br />
-									<h5
-										style={{ alignItems: 'center', justifyContent: 'center' }}
+								<tr>
+									<td
+										style={{
+											fontSize: 20,
+											alignItems: 'center',
+											justifyContent: 'center'
+										}}
 									>
 										No Added Items.
-									</h5>
-								</>
+									</td>
+								</tr>
 							) : (
 								cart.map((item, idx) => (
 									<tr key={idx}>

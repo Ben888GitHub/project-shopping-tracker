@@ -1,20 +1,18 @@
 import React, { useState, useEffect, useContext } from 'react';
 import {
-	Navbar,
 	Container,
 	InputGroup,
 	Form,
-	Modal,
 	Button,
 	FormControl,
 	Card
 } from 'react-bootstrap';
 import { GlobalContext } from '../context/GlobalState';
-import { useHistory, Link, useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 
 function EditShopping() {
-	const { products, editProduct } = useContext(GlobalContext);
+	const { editProduct } = useContext(GlobalContext);
 
 	let { id } = useParams();
 	let history = useHistory();

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Navbar, Container } from 'react-bootstrap';
 import AddShopping from './AddShopping';
 import FilterShopping from './FilterShopping';
 

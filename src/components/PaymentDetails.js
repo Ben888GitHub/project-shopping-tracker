@@ -1,7 +1,7 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { Card, Button } from 'react-bootstrap';
 import { FaRegArrowAltCircleLeft } from 'react-icons/fa';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import { GlobalContext } from '../context/GlobalState';
 
 function PaymentDetails() {
@@ -42,20 +42,29 @@ function PaymentDetails() {
 					))}
 
 					<div className="text-center" style={{ marginTop: 15 }}>
-						<Button
+						<Link
 							style={{
-								fontWeight: 'bold',
-								alignItems: 'center',
-								margin: '0 auto'
+								textDecoration: 'none',
+								color: 'white'
 							}}
-							variant="success"
+							to="/complete"
+							// component={PurchaseList}
 						>
-							PAY ($
-							{cart
-								.map((cartItem) => cartItem.price * cartItem.quantity)
-								.reduce((a, b) => a + b, 0)}
-							)
-						</Button>
+							<Button
+								style={{
+									fontWeight: 'bold',
+									alignItems: 'center',
+									margin: '0 auto'
+								}}
+								variant="success"
+							>
+								PAY ($
+								{cart
+									.map((cartItem) => cartItem.price * cartItem.quantity)
+									.reduce((a, b) => a + b, 0)}
+								)
+							</Button>
+						</Link>
 					</div>
 				</Card.Body>
 			</Card>

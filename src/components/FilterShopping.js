@@ -6,7 +6,7 @@ import { FaShoppingBag } from 'react-icons/fa';
 function FilterShopping() {
 	const [initialValue, setInitialValue] = useState('All');
 
-	const { filterBySearchOrAscOrDesc, products } = useContext(GlobalContext);
+	const { filterBySearchOrAscOrDesc } = useContext(GlobalContext);
 
 	useEffect(() => {
 		filterBySearchOrAscOrDesc(initialValue);

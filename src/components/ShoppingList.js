@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { Container, Card, Row, Col, Button } from 'react-bootstrap';
 import Header from './Header';
 import Footer from './Footer';
@@ -20,17 +20,15 @@ function ShoppingList() {
 
 	console.log(products);
 
-	const onClick = () => {};
-
 	return (
 		<Container>
 			<br />
 			<div className="border" style={{ background: '#E5E7EB' }}>
 				<Header />
 
-				<Row xs={1} md={3} className="g-4" style={{ margin: 15 }}>
-					{searchResult.map((product, idx) => (
-						<>
+				{products.length > 0 ? (
+					<Row xs={1} md={3} className="g-4" style={{ margin: 15 }}>
+						{searchResult.map((product, idx) => (
 							<Col key={idx}>
 								<Card>
 									<Card.Header
@@ -108,9 +106,15 @@ function ShoppingList() {
 									</Card.Body>
 								</Card>
 							</Col>
-						</>
-					))}
-				</Row>
+						))}
+					</Row>
+				) : (
+					<>
+						<br />
+						<h5>No Products to show, please add new product</h5>
+					</>
+				)}
+
 				<br />
 				<br />
 				<Footer />

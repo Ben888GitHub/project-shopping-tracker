@@ -1,10 +1,9 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import { GlobalContext } from '../context/GlobalState';
 
 function SearchShopping() {
-	const { searchProduct, products, filterBySearchOrAscOrDesc } =
-		useContext(GlobalContext);
+	const { searchProduct, products } = useContext(GlobalContext);
 	const [searchedValue, setSearchedValue] = useState('');
 
 	const handleChange = (e) => {

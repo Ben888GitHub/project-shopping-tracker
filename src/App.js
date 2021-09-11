@@ -1,9 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
 import ShoppingList from './components/ShoppingList';
 import ShoppingCart from './components/ShoppingCart';
 import EditShopping from './components/EditShopping';
 import PaymentDetails from './components/PaymentDetails';
+import PaymentComplete from './components/PaymentComplete';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Switch, Route } from 'react-router-dom';
 
@@ -30,6 +30,11 @@ function App() {
 					</Route>
 					<Route path="/payment">
 						<PaymentDetails />
+					</Route>
+					<Route path="/complete">
+						<div className="App">
+							<PaymentComplete />
+						</div>
 					</Route>
 				</Switch>
 			</div>
