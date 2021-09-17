@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/project-shopping-tracker/static/css/main.e9b55331.chunk.css",
-    "main.js": "/project-shopping-tracker/static/js/main.be365116.chunk.js",
-    "main.js.map": "/project-shopping-tracker/static/js/main.be365116.chunk.js.map",
-    "runtime-main.js": "/project-shopping-tracker/static/js/runtime-main.90e5a89c.js",
-    "runtime-main.js.map": "/project-shopping-tracker/static/js/runtime-main.90e5a89c.js.map",
+    "main.js": "/project-shopping-tracker/static/js/main.f64641d2.chunk.js",
+    "main.js.map": "/project-shopping-tracker/static/js/main.f64641d2.chunk.js.map",
+    "runtime-main.js": "/project-shopping-tracker/static/js/runtime-main.1a830bd4.js",
+    "runtime-main.js.map": "/project-shopping-tracker/static/js/runtime-main.1a830bd4.js.map",
     "static/css/2.818011ed.chunk.css": "/project-shopping-tracker/static/css/2.818011ed.chunk.css",
-    "static/js/2.e1eb4f34.chunk.js": "/project-shopping-tracker/static/js/2.e1eb4f34.chunk.js",
-    "static/js/2.e1eb4f34.chunk.js.map": "/project-shopping-tracker/static/js/2.e1eb4f34.chunk.js.map",
-    "static/js/3.5d4e5bd8.chunk.js": "/project-shopping-tracker/static/js/3.5d4e5bd8.chunk.js",
-    "static/js/3.5d4e5bd8.chunk.js.map": "/project-shopping-tracker/static/js/3.5d4e5bd8.chunk.js.map",
+    "static/js/2.c2f8099e.chunk.js": "/project-shopping-tracker/static/js/2.c2f8099e.chunk.js",
+    "static/js/2.c2f8099e.chunk.js.map": "/project-shopping-tracker/static/js/2.c2f8099e.chunk.js.map",
+    "static/js/3.8a0252cd.chunk.js": "/project-shopping-tracker/static/js/3.8a0252cd.chunk.js",
+    "static/js/3.8a0252cd.chunk.js.map": "/project-shopping-tracker/static/js/3.8a0252cd.chunk.js.map",
     "index.html": "/project-shopping-tracker/index.html",
     "static/css/2.818011ed.chunk.css.map": "/project-shopping-tracker/static/css/2.818011ed.chunk.css.map",
     "static/css/main.e9b55331.chunk.css.map": "/project-shopping-tracker/static/css/main.e9b55331.chunk.css.map",
-    "static/js/2.e1eb4f34.chunk.js.LICENSE.txt": "/project-shopping-tracker/static/js/2.e1eb4f34.chunk.js.LICENSE.txt"
+    "static/js/2.c2f8099e.chunk.js.LICENSE.txt": "/project-shopping-tracker/static/js/2.c2f8099e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.90e5a89c.js",
+    "static/js/runtime-main.1a830bd4.js",
     "static/css/2.818011ed.chunk.css",
-    "static/js/2.e1eb4f34.chunk.js",
+    "static/js/2.c2f8099e.chunk.js",
     "static/css/main.e9b55331.chunk.css",
-    "static/js/main.be365116.chunk.js"
+    "static/js/main.f64641d2.chunk.js"
   ]
 }
