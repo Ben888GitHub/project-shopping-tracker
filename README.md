@@ -8,7 +8,7 @@ A Shopping Tracker Application made with React
 
 A Shopping Tracker Application with multiple features such as CRUD, Search & Filter, etc.
 
-This project is purely made with Front-end 
+This project is purely made with Front-end. No Back-end or Database Storage. 
 
 ## Getting Started
 
