@@ -102,7 +102,7 @@ export const appReducer = (state, action) => {
 			let updatedCart;
 			if (action.secondPayload === 'add') {
 				updatedCart = state.cart.map((cartItem) =>
-					cartItem.name === action.payload.name
+					cartItem.id === action.payload.id
 						? {
 								...cartItem,
 								quantity: parseInt(cartItem.quantity) + 1
@@ -111,7 +111,7 @@ export const appReducer = (state, action) => {
 				);
 			} else if (action.secondPayload === 'subtract') {
 				updatedCart = state.cart.map((cartItem) =>
-					cartItem.name === action.payload.name
+					cartItem.id === action.payload.id
 						? {
 								...cartItem,
 								quantity:
@@ -123,7 +123,7 @@ export const appReducer = (state, action) => {
 				);
 			} else {
 				updatedCart = state.cart.map((cartItem) =>
-					cartItem.name === action.payload.name
+					cartItem.id === action.payload.id
 						? {
 								...cartItem,
 								quantity: action.secondPayload
