@@ -81,19 +81,21 @@ function ShoppingList() {
 											${product.price}
 										</Card.Text>
 										<Button
+											data-testid="add-to-cart"
 											style={{
 												fontWeight: 'bold',
 												marginBottom: 5,
 												marginRight: 10
 											}}
 											variant="primary"
+											key={idx}
 											onClick={() => {
 												addToCart(product);
 											}}
 										>
 											Add to Cart
 										</Button>
-										{cart.filter((cartItem) => cartItem.name === product.name)
+										{cart.filter((cartItem) => cartItem.id === product.id)
 											.length > 0 && (
 											<Button
 												style={{ fontWeight: 'bold', marginBottom: 5 }}
@@ -119,6 +121,7 @@ function ShoppingList() {
 				<br />
 				<Footer />
 			</div>
+			<br />
 		</Container>
 	);
 }

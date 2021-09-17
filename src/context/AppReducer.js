@@ -79,12 +79,12 @@ export const appReducer = (state, action) => {
 			// console.log(action.payload.name);
 			let updateCart;
 			if (
-				state.cart.filter((cartItem) => cartItem.name === action.payload.name)
+				state.cart.filter((cartItem) => cartItem.id === action.payload.id)
 					.length > 0
 			) {
 				console.log(action.payload.name);
 				updateCart = state.cart.map((cartItem) =>
-					cartItem.name === action.payload.name
+					cartItem.id === action.payload.id
 						? {
 								...cartItem,
 								quantity: parseInt(cartItem.quantity) + 1
@@ -137,7 +137,7 @@ export const appReducer = (state, action) => {
 			};
 		case 'REMOVE_FROM_CART': {
 			const selectedItems = state.cart.filter(
-				(cartItem) => cartItem.name === action.payload.name
+				(cartItem) => cartItem.id === action.payload.id
 			);
 			const removeSelected = state.cart.filter(
 				(cartItem) => !selectedItems.includes(cartItem)

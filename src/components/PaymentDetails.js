@@ -3,10 +3,17 @@ import { Card, Button } from 'react-bootstrap';
 import { FaRegArrowAltCircleLeft } from 'react-icons/fa';
 import { useHistory, Link } from 'react-router-dom';
 import { GlobalContext } from '../context/GlobalState';
+import { useBeforeunload } from 'react-beforeunload';
 
 function PaymentDetails() {
 	const { cart } = useContext(GlobalContext);
 	let history = useHistory();
+
+	useBeforeunload(() => {
+		if (cart.length !== 0) {
+			return 'You’ll lose your data!';
+		}
+	});
 
 	return (
 		<>

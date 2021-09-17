@@ -9,6 +9,7 @@ import {
 import { GlobalContext } from '../context/GlobalState';
 import { useHistory } from 'react-router-dom';
 import ShoppingCartFooter from './ShoppingCartFooter';
+import { useBeforeunload } from 'react-beforeunload';
 
 function ShoppingCart() {
 	const { cart, addOrSubtractQty, removeFromCart, deleteSelectedCartItems } =
@@ -23,6 +24,12 @@ function ShoppingCart() {
 	console.log(cart);
 
 	console.log(selectedItems);
+
+	useBeforeunload(() => {
+		if (cart.length !== 0) {
+			return 'You’ll lose your data!';
+		}
+	});
 
 	return (
 		<Container>

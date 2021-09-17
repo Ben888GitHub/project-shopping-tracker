@@ -8,6 +8,7 @@ function SearchShopping() {
 
 	const handleChange = (e) => {
 		setSearchedValue(e.target.value);
+		// searchProduct(searchedValue);
 	};
 	useEffect(() => {
 		searchProduct(searchedValue);

@@ -4,7 +4,7 @@ import { FaShoppingCart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { GlobalContext } from '../context/GlobalState';
 
-function Header() {
+function Footer() {
 	const { products, cart } = useContext(GlobalContext);
 
 	console.log(products.length);
@@ -38,4 +38,4 @@ function Header() {
 	);
 }
 
-export default Header;
+export default Footer;

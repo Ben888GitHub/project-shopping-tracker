@@ -29,6 +29,7 @@ function FilterShopping() {
 							onClick={() => {
 								setInitialValue('All');
 								// filterShopping('All');
+								// filterBySearchOrAscOrDesc('All');
 							}}
 						>
 							All
@@ -37,6 +38,7 @@ function FilterShopping() {
 							onClick={() => {
 								setInitialValue('Ascending');
 								// filterShopping('Ascending');
+								// filterBySearchOrAscOrDesc('Ascending');
 							}}
 						>
 							Ascending
@@ -45,6 +47,7 @@ function FilterShopping() {
 							onClick={() => {
 								setInitialValue('Descending');
 								// filterShopping('Descending');
+								// filterBySearchOrAscOrDesc('Descending');
 							}}
 						>
 							Descending
@@ -53,6 +56,7 @@ function FilterShopping() {
 							onClick={() => {
 								setInitialValue('HighToLow');
 								// filterShopping('Descending');
+								// filterBySearchOrAscOrDesc('HighToLow');
 							}}
 						>
 							Price: High to Low
@@ -61,6 +65,7 @@ function FilterShopping() {
 							onClick={() => {
 								setInitialValue('LowToHigh');
 								// filterShopping('Descending');
+								// filterBySearchOrAscOrDesc('LowToHigh');
 							}}
 						>
 							Price: Low to High

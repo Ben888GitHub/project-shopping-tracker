@@ -10,6 +10,7 @@ import {
 import { GlobalContext } from '../context/GlobalState';
 import { useHistory, useParams } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
+import ImageUploading from 'react-images-uploading';
 
 function EditShopping() {
 	const { editProduct } = useContext(GlobalContext);
@@ -21,8 +22,11 @@ function EditShopping() {
 	const [productName, setProductName] = useState('');
 	const [productImg, setProductImg] = useState('');
 	const [productPrice, setProductPrice] = useState('');
+	const [productImgStr, setProductImgStr] = useState('');
 
 	const [disableAdd, setDisableAdd] = useState(true);
+
+	const [disableUpload, setDisableUpload] = useState(false);
 
 	useEffect(() => {
 		if (productName === '' || productImg === '' || productPrice === '') {
@@ -31,6 +35,15 @@ function EditShopping() {
 			setDisableAdd(false);
 		}
 	}, [productName, productImg, productPrice, id]);
+
+	const onChange = (imageList, addUpdateIndex) => {
+		// data for submit
+		console.log(imageList, addUpdateIndex);
+		setProductImg(imageList);
+		console.log(imageList);
+		setDisableUpload(true);
+		imageList.map((image) => setProductImgStr(image.data_url));
+	};
 
 	return (
 		<Container className="d-flex flex-column align-items-center justify-content-center">
@@ -58,12 +71,54 @@ function EditShopping() {
 					<br />
 					<Form.Group>
 						<Form.Label>Image</Form.Label>
-						<Form.Control
-							type="text"
-							placeholder="Place URL"
+						<ImageUploading
+							multiple
 							value={productImg}
-							onChange={(e) => setProductImg(e.target.value)}
-						/>
+							onChange={onChange}
+							maxNumber={1}
+							dataURLKey="data_url"
+						>
+							{({
+								imageList,
+								onImageUpload,
+								isDragging,
+								dragProps,
+								onImageUpdate
+							}) => (
+								<div className="upload__image-wrapper">
+									<Button
+										style={isDragging ? { color: 'red' } : undefined}
+										onClick={onImageUpload}
+										{...dragProps}
+										disabled={disableUpload}
+									>
+										Upload
+									</Button>
+
+									{imageList.map((image, index) => (
+										<div key={index} className="image-item">
+											<br />
+											<img
+												onChange={() => {
+													setProductImg(image.data_url);
+												}}
+												src={image.data_url}
+												alt=""
+												width="100"
+											/>
+											<div className="image-item__btn-wrapper"></div>
+											<br />
+											<Button
+												onClick={() => onImageUpdate(index)}
+												{...dragProps}
+											>
+												Update
+											</Button>
+										</div>
+									))}
+								</div>
+							)}
+						</ImageUploading>
 					</Form.Group>
 					<br />
 					<Form.Group>
@@ -88,7 +143,7 @@ function EditShopping() {
 							editProduct({
 								id: id,
 								name: productName,
-								image: productImg,
+								image: productImgStr,
 								price: parseInt(productPrice),
 								quantity: 1
 							});
