@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# React Shopping Tracker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A Shopping Tracker Application made with React
 
-## Available Scripts
+![Screen Shot 2021-09-17 at 10 55 07 PM](https://user-images.githubusercontent.com/50259107/133818372-ebd81d1a-f11e-43b0-b877-bb6e196fb7e5.png)
 
-In the project directory, you can run:
+## Overview
 
-### `yarn start`
+A Shopping Tracker Application with multiple features such as CRUD, Search & Filter, etc.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This project is purely made with Front-end 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Getting Started
 
-### `yarn test`
+1. Clone the repository and `cd` into its root directory
+2. Run `npm install` to install dependencies
+3. Run `npm start` from the project directory to run in development mode
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This application is served at [http://localhost:3000](http://localhost:3000) by default.
 
-### `yarn build`
+## Building
 
-Builds the app for production to the `build` folder.\
+Run `npm run build` to build the static assets for external or local hosting. The files will be located inside the `build` folder by default.
+
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Usages
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+In the Home Page, you can Add a new Product, Update, and Delete existing Product. Click the Cart Button to navigate to Shopping Cart Page with all added Products from Shopping List Page. 
 
-### `yarn eject`
+In Shopping Cart Page, you can update the quantity of each product along with remove the product from Cart Items and click on the `Proceed to Payment` button to navigate to Payment Confirmation Page.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+In Payment Confirmation page, you can view all your added Products' prices and quantities from your Shopping Cart which allow you to click on the `PAY` button to bring you to the Payment Complete page.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+In Payment Complete page, a simple payment receipt will show up together with the `Back to Home` button to bring you back to the main page.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Note:** Products are not stored anywhere. Both Shopping Cart and Payment Confirmation pages will alert you that all your products will be gone if you leave or refresh the page.
