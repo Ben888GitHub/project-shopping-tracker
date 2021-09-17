@@ -5,7 +5,7 @@ import EditShopping from './components/EditShopping';
 import PaymentDetails from './components/PaymentDetails';
 import PaymentComplete from './components/PaymentComplete';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, HashRouter } from 'react-router-dom';
 
 // Import Context API provider
 import { GlobalProvider } from './context/GlobalState';
@@ -14,7 +14,7 @@ function App() {
 	return (
 		<GlobalProvider>
 			<div>
-				<Switch>
+				<HashRouter>
 					<Route exact path="/">
 						<div className="App">
 							<ShoppingList />
@@ -36,7 +36,7 @@ function App() {
 							<PaymentComplete />
 						</div>
 					</Route>
-				</Switch>
+				</HashRouter>
 			</div>
 		</GlobalProvider>
 	);
